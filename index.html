@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Mock Interview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="landing-page">
+  <main class="shell landing-shell">
+    <nav class="topbar">
+      <a class="brand" href="/" aria-label="AI Mock Interview home"><span class="brand-mark">AI</span><span>Mock Interview</span></a>
+      <span class="status-pill"><span class="status-dot"></span> AI-powered practice</span>
+    </nav>
+    <section class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Practice with purpose</p>
+        <h1>Turn interview nerves into <em>earned confidence.</em></h1>
+        <p class="hero-description">A focused mock interview, generated around your subject and level. Get sharper with every question.</p>
+        <div class="hero-notes"><span>10 tailored questions</span><span>Instant results</span><span>Private by design</span></div>
+      </div>
+      <section class="setup-panel" aria-labelledby="setup-title">
+        <div class="panel-heading"><div><p class="eyebrow">Your session</p><h2 id="setup-title">Set your challenge</h2></div><span class="step-count">01 <span>/ 02</span></span></div>
+        <form id="setup-form">
+          <fieldset><legend>Choose a subject</legend><div class="choice-grid subject-grid">
+            {% for subject in ['Python', 'Java', 'C', 'HTML', 'CSS', 'SQL', 'Node.js'] %}<label class="choice"><input type="radio" name="subject" value="{{ subject }}" {% if loop.first %}checked{% endif %}><span>{{ subject }}</span></label>{% endfor %}
+          </div></fieldset>
+          <fieldset><legend>Choose your level</legend><div class="choice-grid level-grid">
+            {% for level in ['Basic', 'Intermediate', 'Expert'] %}<label class="choice"><input type="radio" name="level" value="{{ level }}" {% if loop.first %}checked{% endif %}><span>{{ level }}</span></label>{% endfor %}
+          </div></fieldset>
+          <button class="button button-primary full-width" type="submit">Start interview <span aria-hidden="true">&#8594;</span></button>
+          <p class="form-message" id="setup-message" role="alert"></p>
+        </form>
+      </section>
+    </section>
+    <footer class="site-footer"><span>Built for better technical conversations.</span><span>© 2026 AI Mock Interview</span></footer>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

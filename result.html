@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Results | AI Mock Interview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="app-page">
+  <main class="shell app-shell"><nav class="topbar"><a class="brand" href="/"><span class="brand-mark">AI</span><span>Mock Interview</span></a><span class="status-pill"><span class="status-dot"></span> Session complete</span></nav>
+    <section class="results-wrap" id="results-app"><div class="loading-state">Loading your results<span class="loading-dots">...</span></div></section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
